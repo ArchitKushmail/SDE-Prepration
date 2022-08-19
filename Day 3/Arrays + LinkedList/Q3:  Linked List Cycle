@@ -1,0 +1,13 @@
+#include <set>
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+       set <int>store;
+        ListNode *temp=head;
+        while(temp!=NULL){
+            if(!store.insert(temp).second) return true;
+            temp=temp->next;
+        }
+        return false;
+    }
+};
