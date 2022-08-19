@@ -1,0 +1,24 @@
+class Solution {
+public:
+    bool isPalindrome(ListNode* head) {
+        ListNode* temp = head;
+        vector<int> arr;
+        while(temp!=NULL){
+            int g = temp->val;
+            arr.push_back(g);
+            temp=temp->next;
+        }
+        int flag =0;
+        int size = arr.size();
+        for(int i=0;i<size/2 &&size!=0;i++){
+            if(arr[i]!=arr[size-i-1]){
+                flag =1;
+                break;
+            }
+        }
+        if(flag==1){
+            return false;
+        }
+        return true;
+    }
+};
